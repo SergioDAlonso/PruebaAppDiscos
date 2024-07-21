@@ -10,11 +10,10 @@ namespace AccesoDB
 {
     public class TipoEdicionNegocio
     {
-        List<TipoEdicion> listar()
+        public List<TipoEdicion> listar()
         {
             List<TipoEdicion> lista = new List<TipoEdicion>();
             AccesoDatos datos = new AccesoDatos();
-
             try
             {
                 datos.setearConsulta("select Id, Descripcion from TIPOSEDICION");
@@ -23,7 +22,7 @@ namespace AccesoDB
                 {
                     TipoEdicion aux = new TipoEdicion();
                     aux.Id = (int)datos.Lector["Id"];
-                    aux.Descricion = (string)datos.Lector["Description"];
+                    aux.Descripcion = (string)datos.Lector["Descripcion"];
 
                     lista.Add(aux); 
                 }

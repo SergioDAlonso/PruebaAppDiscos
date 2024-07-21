@@ -10,7 +10,12 @@ namespace Dominio
     public class Estilo
     {
         public int Id { get; set; }
-        [DisplayName("Descripción")]
+        [DisplayName("Estilo")]
         public string Descripcion { get; set; }
+
+        public override string ToString()
+        {
+            return Descripcion;
+        }
     }
 }
