@@ -35,22 +35,32 @@ namespace PruebaAppDiscos
         private void bttAgregar_Click(object sender, EventArgs e)
         {
             DiscosNegocio negocio = new DiscosNegocio();
-            Discos nuevo = new Discos();
             try
             {
-                nuevo.Id = int.Parse(txbNumero.Text);
-                nuevo.Titulo = txbTitulo.Text;
-                nuevo.FechaLanzamiento = DateTime.Parse(txbFecha.Text);
-                nuevo.CantCanciones = int.Parse(txbCantCanc.Text);
-                nuevo.UrlImagenTapa = txbUrlImagenTapa.Text;
-
-                negocio.agregar(nuevo);
-                MessageBox.Show("Disco Agregado");
-                Close();
+                
+                if (discos == null)
+                    discos = new Discos();
+                discos.Titulo = txbTitulo.Text;
+                discos.FechaLanzamiento = dtFecha.Value;
+                discos.CantCanciones = int.Parse(txbCantCanc.Text);
+                discos.UrlImagenTapa = txbUrlImagenTapa.Text;
+                discos.Estilo = (Estilo)cbxEstilo.SelectedItem;
+                discos.TipoEdicion = (TipoEdicion)cbxTipo.SelectedItem;
+                
+                if (discos.Id != 0)
+                {
+                    negocio.modificar(discos);
+                    MessageBox.Show("Disco Modificado");
+                    Close();
+                }
+                else
+                {
+                    negocio.agregar(discos);
+                    MessageBox.Show("Disco Agregado");
+                }
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.ToString());
             }
 
@@ -63,16 +73,16 @@ namespace PruebaAppDiscos
             try
             {
                 cbxEstilo.DataSource = estilo.listar();
-                cbxEstilo.ValueMember = "id";
+                cbxEstilo.ValueMember = "Id";
                 cbxEstilo.DisplayMember = "Descripcion";
                 cbxTipo.DataSource = Tipo.listar();
                 cbxTipo.ValueMember = "Id";
                 cbxTipo.DisplayMember = "Descripcion";
+                
                 if (discos != null)
                 {
-                    txbNumero.Text = discos.Id.ToString();
                     txbTitulo.Text = discos.Titulo;
-                    txbFecha.Text = discos.FechaLanzamiento.ToString();
+                    dtFecha.Value = discos.FechaLanzamiento;
                     txbCantCanc.Text = discos.CantCanciones.ToString();
                     txbUrlImagenTapa.Text = discos.UrlImagenTapa;
                     cargarImagen(discos.UrlImagenTapa);
@@ -99,6 +109,11 @@ namespace PruebaAppDiscos
                 pcbTapa.Load("https://t3.ftcdn.net/jpg/02/48/42/64/360_F_248426448_NVKLywWqArG2ADUxDq6QprtIzsF82dMF.jpg");
 
             }
+        }
+
+        private void txbUrlImagenTapa_Leave(object sender, EventArgs e)
+        {
+            cargarImagen(txbUrlImagenTapa.Text);
         }
     }
 }

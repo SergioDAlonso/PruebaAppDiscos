@@ -59,6 +59,7 @@
             this.dgvDiscos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDiscos.Size = new System.Drawing.Size(653, 291);
             this.dgvDiscos.TabIndex = 0;
+            this.dgvDiscos.SelectionChanged += new System.EventHandler(this.dgvDiscos_SelectionChanged);
             // 
             // bttAceptar
             // 
@@ -108,6 +109,7 @@
             this.bttEliFisico.TabIndex = 5;
             this.bttEliFisico.Text = "Eliminar Fisico";
             this.bttEliFisico.UseVisualStyleBackColor = true;
+            this.bttEliFisico.Click += new System.EventHandler(this.bttEliFisico_Click);
             // 
             // bttEliLogi
             // 
@@ -117,6 +119,7 @@
             this.bttEliLogi.TabIndex = 6;
             this.bttEliLogi.Text = "Eliminar Logico";
             this.bttEliLogi.UseVisualStyleBackColor = true;
+            this.bttEliLogi.Click += new System.EventHandler(this.bttEliLogi_Click);
             // 
             // lblBuscar
             // 

@@ -49,15 +49,15 @@
             this.cbxTipo = new System.Windows.Forms.ComboBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.buscarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.buscarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.opcionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.agregarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.modificarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eliminarLogicoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.modificarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pcbTapa)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -130,6 +130,7 @@
             // 
             this.txbNumero.Location = new System.Drawing.Point(190, 66);
             this.txbNumero.Name = "txbNumero";
+            this.txbNumero.ReadOnly = true;
             this.txbNumero.Size = new System.Drawing.Size(57, 20);
             this.txbNumero.TabIndex = 7;
             // 
@@ -137,6 +138,7 @@
             // 
             this.txbTitulo.Location = new System.Drawing.Point(184, 115);
             this.txbTitulo.Name = "txbTitulo";
+            this.txbTitulo.ReadOnly = true;
             this.txbTitulo.Size = new System.Drawing.Size(100, 20);
             this.txbTitulo.TabIndex = 8;
             // 
@@ -144,6 +146,7 @@
             // 
             this.txbFecha.Location = new System.Drawing.Point(184, 151);
             this.txbFecha.Name = "txbFecha";
+            this.txbFecha.ReadOnly = true;
             this.txbFecha.Size = new System.Drawing.Size(100, 20);
             this.txbFecha.TabIndex = 30;
             // 
@@ -151,6 +154,7 @@
             // 
             this.txbCantCanc.Location = new System.Drawing.Point(184, 189);
             this.txbCantCanc.Name = "txbCantCanc";
+            this.txbCantCanc.ReadOnly = true;
             this.txbCantCanc.Size = new System.Drawing.Size(100, 20);
             this.txbCantCanc.TabIndex = 11;
             // 
@@ -197,6 +201,7 @@
             // 
             this.txbUrlImagenTapa.Location = new System.Drawing.Point(184, 232);
             this.txbUrlImagenTapa.Name = "txbUrlImagenTapa";
+            this.txbUrlImagenTapa.ReadOnly = true;
             this.txbUrlImagenTapa.Size = new System.Drawing.Size(100, 20);
             this.txbUrlImagenTapa.TabIndex = 32;
             // 
@@ -239,19 +244,19 @@
             this.buscarToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
             this.buscarToolStripMenuItem.Text = "Archivo";
             // 
-            // salirToolStripMenuItem
-            // 
-            this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.salirToolStripMenuItem.Text = "Salir";
-            this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click_1);
-            // 
             // buscarToolStripMenuItem1
             // 
             this.buscarToolStripMenuItem1.Name = "buscarToolStripMenuItem1";
-            this.buscarToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.buscarToolStripMenuItem1.Size = new System.Drawing.Size(109, 22);
             this.buscarToolStripMenuItem1.Text = "Buscar";
             this.buscarToolStripMenuItem1.Click += new System.EventHandler(this.buscarToolStripMenuItem1_Click);
+            // 
+            // salirToolStripMenuItem
+            // 
+            this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
+            this.salirToolStripMenuItem.Text = "Salir";
+            this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click_1);
             // 
             // opcionesToolStripMenuItem
             // 
@@ -266,14 +271,21 @@
             // agregarToolStripMenuItem
             // 
             this.agregarToolStripMenuItem.Name = "agregarToolStripMenuItem";
-            this.agregarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.agregarToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
             this.agregarToolStripMenuItem.Text = "Agregar";
             this.agregarToolStripMenuItem.Click += new System.EventHandler(this.agregarToolStripMenuItem_Click);
+            // 
+            // modificarToolStripMenuItem
+            // 
+            this.modificarToolStripMenuItem.Name = "modificarToolStripMenuItem";
+            this.modificarToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.modificarToolStripMenuItem.Text = "Modificar";
+            this.modificarToolStripMenuItem.Click += new System.EventHandler(this.modificarToolStripMenuItem_Click);
             // 
             // eliminarLogicoToolStripMenuItem
             // 
             this.eliminarLogicoToolStripMenuItem.Name = "eliminarLogicoToolStripMenuItem";
-            this.eliminarLogicoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.eliminarLogicoToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
             this.eliminarLogicoToolStripMenuItem.Text = "Eliminar Logico";
             this.eliminarLogicoToolStripMenuItem.Click += new System.EventHandler(this.eliminarLogicoToolStripMenuItem_Click);
             // 
@@ -303,13 +315,6 @@
             this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
             this.toolStripButton1.Text = "toolStripButton1";
             this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click_1);
-            // 
-            // modificarToolStripMenuItem
-            // 
-            this.modificarToolStripMenuItem.Name = "modificarToolStripMenuItem";
-            this.modificarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.modificarToolStripMenuItem.Text = "Modificar";
-            this.modificarToolStripMenuItem.Click += new System.EventHandler(this.modificarToolStripMenuItem_Click);
             // 
             // Form1
             // 

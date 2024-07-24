@@ -64,6 +64,7 @@ namespace PruebaAppDiscos
         {
             frmAltaDisco Agregar = new frmAltaDisco();
             Agregar.ShowDialog();
+            cargar();
         }
 
         private void bttModificar_Click(object sender, EventArgs e)
@@ -74,6 +75,45 @@ namespace PruebaAppDiscos
                 MessageBox.Show("Seleccione un disco.");
             frmAltaDisco Modificar = new frmAltaDisco(selecionado);
             Modificar.ShowDialog();
+        }
+
+        private void dgvDiscos_SelectionChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void bttEliFisico_Click(object sender, EventArgs e)
+        {
+            eliminar();
+        }
+
+        private void bttEliLogi_Click(object sender, EventArgs e)
+        {
+            eliminar(true);
+        }
+        private void eliminar (bool logico = false)
+        {
+            DiscosNegocio negocio = new DiscosNegocio();
+            Discos selecionado;
+            try
+            {
+                DialogResult respuesta = MessageBox.Show("Desea eliminarlo?", "Eliminando", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (respuesta == DialogResult.Yes)
+                {
+                    selecionado = (Discos)dgvDiscos.CurrentRow.DataBoundItem;
+                    if (logico)
+                        negocio.eliminarLogico(selecionado.Id);
+                    else
+                        negocio.eliminar(selecionado.Id);
+                    MessageBox.Show("Eliminado");
+                    cargar();
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
+            }
         }
     }
 }

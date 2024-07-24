@@ -36,15 +36,13 @@
             this.bttAgregar = new System.Windows.Forms.Button();
             this.txbCantCanc = new System.Windows.Forms.TextBox();
             this.pcbTapa = new System.Windows.Forms.PictureBox();
-            this.txbFecha = new System.Windows.Forms.TextBox();
             this.txbTitulo = new System.Windows.Forms.TextBox();
-            this.txbNumero = new System.Windows.Forms.TextBox();
             this.lblTedi = new System.Windows.Forms.Label();
             this.lblEstilo = new System.Windows.Forms.Label();
             this.lblCantCanc = new System.Windows.Forms.Label();
-            this.lblFecha = new System.Windows.Forms.Label();
             this.lblTitulo = new System.Windows.Forms.Label();
-            this.lblNumero = new System.Windows.Forms.Label();
+            this.lblFecha = new System.Windows.Forms.Label();
+            this.dtFecha = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.pcbTapa)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,31 +50,32 @@
             // 
             this.cbxTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxTipo.FormattingEnabled = true;
-            this.cbxTipo.Location = new System.Drawing.Point(139, 283);
+            this.cbxTipo.Location = new System.Drawing.Point(126, 249);
             this.cbxTipo.Name = "cbxTipo";
-            this.cbxTipo.Size = new System.Drawing.Size(100, 21);
+            this.cbxTipo.Size = new System.Drawing.Size(144, 21);
             this.cbxTipo.TabIndex = 51;
             // 
             // cbxEstilo
             // 
             this.cbxEstilo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxEstilo.FormattingEnabled = true;
-            this.cbxEstilo.Location = new System.Drawing.Point(139, 245);
+            this.cbxEstilo.Location = new System.Drawing.Point(126, 209);
             this.cbxEstilo.Name = "cbxEstilo";
-            this.cbxEstilo.Size = new System.Drawing.Size(100, 21);
+            this.cbxEstilo.Size = new System.Drawing.Size(144, 21);
             this.cbxEstilo.TabIndex = 50;
             // 
             // txbUrlImagenTapa
             // 
-            this.txbUrlImagenTapa.Location = new System.Drawing.Point(139, 207);
+            this.txbUrlImagenTapa.Location = new System.Drawing.Point(126, 171);
             this.txbUrlImagenTapa.Name = "txbUrlImagenTapa";
-            this.txbUrlImagenTapa.Size = new System.Drawing.Size(100, 20);
+            this.txbUrlImagenTapa.Size = new System.Drawing.Size(144, 20);
             this.txbUrlImagenTapa.TabIndex = 49;
+            this.txbUrlImagenTapa.Leave += new System.EventHandler(this.txbUrlImagenTapa_Leave);
             // 
             // lblUrlImagenTapa
             // 
             this.lblUrlImagenTapa.AutoSize = true;
-            this.lblUrlImagenTapa.Location = new System.Drawing.Point(56, 207);
+            this.lblUrlImagenTapa.Location = new System.Drawing.Point(45, 174);
             this.lblUrlImagenTapa.Name = "lblUrlImagenTapa";
             this.lblUrlImagenTapa.Size = new System.Drawing.Size(83, 13);
             this.lblUrlImagenTapa.TabIndex = 48;
@@ -105,9 +104,9 @@
             // 
             // txbCantCanc
             // 
-            this.txbCantCanc.Location = new System.Drawing.Point(139, 164);
+            this.txbCantCanc.Location = new System.Drawing.Point(126, 127);
             this.txbCantCanc.Name = "txbCantCanc";
-            this.txbCantCanc.Size = new System.Drawing.Size(100, 20);
+            this.txbCantCanc.Size = new System.Drawing.Size(144, 20);
             this.txbCantCanc.TabIndex = 44;
             // 
             // pcbTapa
@@ -120,31 +119,17 @@
             this.pcbTapa.TabIndex = 43;
             this.pcbTapa.TabStop = false;
             // 
-            // txbFecha
-            // 
-            this.txbFecha.Location = new System.Drawing.Point(139, 126);
-            this.txbFecha.Name = "txbFecha";
-            this.txbFecha.Size = new System.Drawing.Size(100, 20);
-            this.txbFecha.TabIndex = 47;
-            // 
             // txbTitulo
             // 
-            this.txbTitulo.Location = new System.Drawing.Point(139, 90);
+            this.txbTitulo.Location = new System.Drawing.Point(126, 49);
             this.txbTitulo.Name = "txbTitulo";
-            this.txbTitulo.Size = new System.Drawing.Size(100, 20);
+            this.txbTitulo.Size = new System.Drawing.Size(144, 20);
             this.txbTitulo.TabIndex = 42;
-            // 
-            // txbNumero
-            // 
-            this.txbNumero.Location = new System.Drawing.Point(145, 41);
-            this.txbNumero.Name = "txbNumero";
-            this.txbNumero.Size = new System.Drawing.Size(57, 20);
-            this.txbNumero.TabIndex = 41;
             // 
             // lblTedi
             // 
             this.lblTedi.AutoSize = true;
-            this.lblTedi.Location = new System.Drawing.Point(49, 286);
+            this.lblTedi.Location = new System.Drawing.Point(36, 252);
             this.lblTedi.Name = "lblTedi";
             this.lblTedi.Size = new System.Drawing.Size(84, 13);
             this.lblTedi.TabIndex = 40;
@@ -153,7 +138,7 @@
             // lblEstilo
             // 
             this.lblEstilo.AutoSize = true;
-            this.lblEstilo.Location = new System.Drawing.Point(98, 248);
+            this.lblEstilo.Location = new System.Drawing.Point(85, 212);
             this.lblEstilo.Name = "lblEstilo";
             this.lblEstilo.Size = new System.Drawing.Size(35, 13);
             this.lblEstilo.TabIndex = 39;
@@ -162,44 +147,44 @@
             // lblCantCanc
             // 
             this.lblCantCanc.AutoSize = true;
-            this.lblCantCanc.Location = new System.Drawing.Point(19, 164);
+            this.lblCantCanc.Location = new System.Drawing.Point(8, 130);
             this.lblCantCanc.Name = "lblCantCanc";
             this.lblCantCanc.Size = new System.Drawing.Size(120, 13);
             this.lblCantCanc.TabIndex = 38;
             this.lblCantCanc.Text = "Cantidad de Canciones:";
             // 
-            // lblFecha
-            // 
-            this.lblFecha.AutoSize = true;
-            this.lblFecha.Location = new System.Drawing.Point(21, 129);
-            this.lblFecha.Name = "lblFecha";
-            this.lblFecha.Size = new System.Drawing.Size(118, 13);
-            this.lblFecha.TabIndex = 37;
-            this.lblFecha.Text = "Fecha de Lanzamiento:";
-            // 
             // lblTitulo
             // 
             this.lblTitulo.AutoSize = true;
-            this.lblTitulo.Location = new System.Drawing.Point(97, 90);
+            this.lblTitulo.Location = new System.Drawing.Point(84, 52);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(36, 13);
             this.lblTitulo.TabIndex = 36;
             this.lblTitulo.Text = "Titulo:";
             // 
-            // lblNumero
+            // lblFecha
             // 
-            this.lblNumero.AutoSize = true;
-            this.lblNumero.Location = new System.Drawing.Point(35, 44);
-            this.lblNumero.Name = "lblNumero";
-            this.lblNumero.Size = new System.Drawing.Size(104, 13);
-            this.lblNumero.TabIndex = 35;
-            this.lblNumero.Text = "Numero de Registro:";
+            this.lblFecha.AutoSize = true;
+            this.lblFecha.Location = new System.Drawing.Point(8, 88);
+            this.lblFecha.Name = "lblFecha";
+            this.lblFecha.Size = new System.Drawing.Size(118, 13);
+            this.lblFecha.TabIndex = 37;
+            this.lblFecha.Text = "Fecha de Lanzamiento:";
+            // 
+            // dtFecha
+            // 
+            this.dtFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtFecha.Location = new System.Drawing.Point(126, 82);
+            this.dtFecha.Name = "dtFecha";
+            this.dtFecha.Size = new System.Drawing.Size(144, 20);
+            this.dtFecha.TabIndex = 52;
             // 
             // frmAltaDisco
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(590, 387);
+            this.Controls.Add(this.dtFecha);
             this.Controls.Add(this.cbxTipo);
             this.Controls.Add(this.cbxEstilo);
             this.Controls.Add(this.txbUrlImagenTapa);
@@ -208,15 +193,12 @@
             this.Controls.Add(this.bttAgregar);
             this.Controls.Add(this.txbCantCanc);
             this.Controls.Add(this.pcbTapa);
-            this.Controls.Add(this.txbFecha);
             this.Controls.Add(this.txbTitulo);
-            this.Controls.Add(this.txbNumero);
             this.Controls.Add(this.lblTedi);
             this.Controls.Add(this.lblEstilo);
             this.Controls.Add(this.lblCantCanc);
             this.Controls.Add(this.lblFecha);
             this.Controls.Add(this.lblTitulo);
-            this.Controls.Add(this.lblNumero);
             this.Name = "frmAltaDisco";
             this.Text = "AltaDisco";
             this.Load += new System.EventHandler(this.frmAltaDisco_Load);
@@ -236,14 +218,12 @@
         private System.Windows.Forms.Button bttAgregar;
         private System.Windows.Forms.TextBox txbCantCanc;
         private System.Windows.Forms.PictureBox pcbTapa;
-        private System.Windows.Forms.TextBox txbFecha;
         private System.Windows.Forms.TextBox txbTitulo;
-        private System.Windows.Forms.TextBox txbNumero;
         private System.Windows.Forms.Label lblTedi;
         private System.Windows.Forms.Label lblEstilo;
         private System.Windows.Forms.Label lblCantCanc;
-        private System.Windows.Forms.Label lblFecha;
         private System.Windows.Forms.Label lblTitulo;
-        private System.Windows.Forms.Label lblNumero;
+        private System.Windows.Forms.Label lblFecha;
+        private System.Windows.Forms.DateTimePicker dtFecha;
     }
 }
